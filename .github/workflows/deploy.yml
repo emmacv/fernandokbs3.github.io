@@ -1,6 +1,14 @@
-# name: Deploy
+name: Deploy
 
-# on: push
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print variable
+        run: echo "Hello, World!"
 
 # jobs:
 #   build:
