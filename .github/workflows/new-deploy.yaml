@@ -9,3 +9,7 @@ jobs:
     steps:
       - name: Print variable
         run: echo "${{ secrets.TOKEN_SECRECT }}"
+      - name: deploy
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
