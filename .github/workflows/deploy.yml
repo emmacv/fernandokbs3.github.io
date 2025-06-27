@@ -6,6 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      redis:
+        image: redis:latest
+        ports:
+          - 6379:6379
+
     steps:
       - name: Print variable
         run: echo "Hello, World!"
@@ -14,6 +20,13 @@ jobs:
         with:
           text: "ship ship ship!"
           color: "red"
+      - name: Install redis-cli
+        run: sudo apt-get install redis-tools -y
+
+      - name: test redis connection
+        run: |
+          redis-cli -h localhost -p 6379 ping
+
 # jobs:
 #   build:
 #     runs-on: ${{ matrix.os }}
