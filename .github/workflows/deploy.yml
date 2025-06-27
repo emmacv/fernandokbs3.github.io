@@ -9,7 +9,11 @@ jobs:
     steps:
       - name: Print variable
         run: echo "Hello, World!"
-
+      - name: print a cow
+        uses: mscoutermarsh/cowsays-action@master
+        with:
+          text: "ship ship ship!"
+          color: "red"
 # jobs:
 #   build:
 #     runs-on: ${{ matrix.os }}
